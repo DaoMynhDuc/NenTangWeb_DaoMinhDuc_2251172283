@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTH Chương 2</title>
+</head>
+<body>
+    <form>
+        <h2>Form Thêm Sinh Viên</h2>
+        <label for="id">Mã sinh viên:</label>
+        <br>
+        <input type="text" id="id" name="id" required>
+        <br>
+        <label for="name">Họ và tên:</label>
+        <br>
+        <input type="name" id="name" name="name" required>
+        <br>
+        <label for="email">Email:</label>
+        <br>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="birth">Ngày sinh:</label>
+        <br>
+        <input type="date" id="birth" name="birth">
+        <br>
+        <label for="gender">Giới tính:</label>
+        <br>
+        <input type="radio" id="male" name="gender" value="Nam">
+        <label for="male">Nam</label>
+        <br>
+        <input type="radio" id="female" name="gender" value="Nữ">
+        <label for="male">Nữ</label>
+        <br>
+        <label for="note">Ghi chú:</label>
+        <br>
+        <textarea name="note" id="note"></textarea>
+        <br>
+        <input type="submit" value="Thêm sinh viên">
+        
+    </form>
+    <h2>Danh sách Sinh viên</h2>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Mã SV</th>
+                <th>Họ tên</th>
+                <th>Email</th>
+                <th>Giới tính</th>
+                <th>Ngày sinh</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>SV001</td>
+                <td>Đào Minh Đức</td>
+                <td>daominhduc@gmail.com</td>
+                <td>Nam</td>
+                <td>26/02/2004</td>
+                <td>
+                    <a href="#">Sửa</a> | 
+                    <a href="#">Xóa</a>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>SV002</td>
+                <td>Hoàng Văn Điệp</td>
+                <td>hoangdiep@gmail.com</td>
+                <td>Nữ</td>
+                <td>10/07/2003</td>
+                <td>
+                    <a href="#">Sửa</a> | 
+                    <a href="#">Xóa</a>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>SV003</td>
+                <td>Lê Minh Cường</td>
+                <td>leminhcuong@gmail.com</td>
+                <td>Nam</td>
+                <td>10/11/2004</td>
+                <td>
+                    <a href="#">Sửa</a> | 
+                    <a href="#">Xóa</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
