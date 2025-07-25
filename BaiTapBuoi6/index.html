@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý Sinh viên</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <h1>Quản lý Sinh viên</h1>
+  </header>
+
+  <h2 id="thongBao" style="color: green; font-weight: bold; margin-top: 10px ; padding: 20px;"></h2>
+
+
+  <!-- Main layout -->
+  <div class="container">
+    <!-- Form bên trái -->
+    <section class="form-section">
+      <h2>Thêm Sinh Viên</h2>
+      <form>
+        <label for="id">Mã sinh viên:</label>
+        <input type="text" id="id" name="id" required>
+
+        <label for="name">Họ và tên:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="birth">Ngày sinh:</label>
+        <input type="date" id="birth" name="birth">
+
+        <label>Giới tính:</label>
+        <div class="gender-group">
+          <input type="radio" id="male" name="gender" value="Nam">
+          <label for="male">Nam</label>
+
+          <input type="radio" id="female" name="gender" value="Nữ">
+          <label for="female">Nữ</label>
+        </div>
+
+        <label for="note">Ghi chú:</label>
+        <textarea id="note" name="note"></textarea>
+
+        <button type="submit" id="btnThem">Thêm sinh viên</button>
+      </form>
+    </section>
+
+    <!-- Bảng bên phải -->
+    <section class="table-section">
+      <h2>Danh sách Sinh viên</h2>
+      <table id="bangSinhvien">
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Mã SV</th>
+            <th>Họ tên</th>
+            <th>Email</th>
+            <th>Giới tính</th>
+            <th>Ngày sinh</th>
+            <th>Thao tác</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>SV001</td>
+            <td>Đào Minh Đức</td>
+            <td>daominhduc@gmail.com</td>
+            <td>Nam</td>
+            <td>26/02/2004</td>
+            <td><button class="suaDong" href="#">Sửa</button>
+				<button class="xoaDong" href="#">Xóa</button>
+			</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>SV002</td>
+            <td>Hoàng Văn Điệp</td>
+            <td>hoangdiep@gmail.com</td>
+            <td>Nữ</td>
+            <td>10/07/2003</td>
+            <td><button class="suaDong" href="#">Sửa</button>
+				<button class="xoaDong" href="#">Xóa</button>
+			</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>SV003</td>
+            <td>Lê Minh Cường</td>
+            <td>leminhcuong@gmail.com</td>
+            <td>Nam</td>
+            <td>10/11/2004</td>
+			<td><button class="suaDong" href="#">Sửa</button>
+				<button class="xoaDong" href="#">Xóa</button>
+			</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+</body>
+<script src="./script.js"></script>
+</html>
