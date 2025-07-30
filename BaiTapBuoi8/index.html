@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quản lý giao dịch</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body { margin: 0; padding: 0; }
+    .navbar-dark { background-color: #343a40; }
+  </style>
+</head>
+<body>
+
+<!-- Thanh điều hướng -->
+<nav class="navbar navbar-dark navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Trường Đại học Thủy Lợi</a>
+    <div class="d-flex">
+      <a class="nav-link text-white me-3 w-50 mt-3 " href="#">Trang chủ</a>
+      <a class="nav-link text-white me-3 w-75 mt-3" href="#">Quản lý cửa hàng</a>
+      <input class="form-control me-2 " type="search" placeholder="Nội dung tìm kiếm">
+      <button class="btn btn-success" type="submit">Tìm kiếm</button>
+    </div>
+  </div>
+</nav>
+<!-- Lua chon -->
+ <nav class="d-flex align-items-center justify-content-between  ">
+    <div class="m-5">
+        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addOrder">Thêm</button>
+
+        <button class="btn btn-secondary">Xuất file</button>
+    </div>
+    <div class="d-flex">
+        <button>></button>
+        <input type="text" class="form-control w-100" placeholder="Tìm kiếm giao dịch">
+        <button>Search</button>
+    </div>
+    <div class="d-flex m-5">
+       <p class="me-2">Kết quả</p>
+       <select class="form-select w-50">
+            <option>5</option>
+            <option>10</option>
+        </select>
+    </div>
+
+ </nav>
+
+ <!-- bảng -->
+ <div class="table-container">
+    <div class="table-responsive">
+        <table class="table table-hover mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th width="50">
+                        <input type="checkbox" class="form-check-input">
+                    </th>
+                    <th>Hành động</th>
+                    <th>ID</th>
+                    <th>Khách hàng</th>
+                    <th>Nhân viên</th>
+                    <th>Số tiền</th>
+                    <th>Ngày mua</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" class="form-check-input"></td>
+                    <td class="d-flex">
+                        <button class="btn btn-outline-primary btn-action" title="Xem chi tiết">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="btn btn-outline-warning btn-action" title="Chỉnh sửa">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn btn-outline-danger btn-action" title="Xóa">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                    <td>1001</td>
+                    <td>Nguyễn Văn An</td>
+                    <td>Mai Thị Hoa</td>
+                    <td>320.000</td>
+                    <td>30/07/2025</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="form-check-input"></td>
+                    <td class="d-flex">
+                        <button class="btn btn-outline-primary btn-action" title="Xem chi tiết">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="btn btn-outline-warning btn-action" title="Chỉnh sửa">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn btn-outline-danger btn-action" title="Xóa">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                    <td>1002</td>
+                    <td>Trần Thị Bình</td>
+                    <td>Nguyễn Văn Hùng</td>
+                    <td>150.000</td>
+                    <td>29/07/2025</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="form-check-input"></td>
+                    <td class="d-flex">
+                        <button class="btn btn-outline-primary btn-action" title="Xem chi tiết">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="btn btn-outline-warning btn-action" title="Chỉnh sửa">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn btn-outline-danger btn-action" title="Xóa">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                    <td>1003</td>
+                    <td>Lê Hữu Cường</td>
+                    <td>Phạm Thị Hạnh</td>
+                    <td>480.000</td>
+                    <td>28/07/2025</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="form-check-input"></td>
+                    <td class="d-flex">
+                        <button class="btn btn-outline-primary btn-action" title="Xem chi tiết">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="btn btn-outline-warning btn-action" title="Chỉnh sửa">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn btn-outline-danger btn-action" title="Xóa">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                    <td>1004</td>
+                    <td>Phạm Minh Đức</td>
+                    <td>Nguyễn Thị Thu</td>
+                    <td>210.000</td>
+                    <td>27/07/2025</td>
+                    
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="form-check-input"></td>
+                    <td class="d-flex">
+                        <button class="btn btn-outline-primary btn-action" title="Xem chi tiết">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="btn btn-outline-warning btn-action" title="Chỉnh sửa">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn btn-outline-danger btn-action" title="Xóa">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                    <td>1005</td>
+                    <td>Vũ Thị Hương</td>
+                    <td>Trần Văn Quang</td>
+                    <td>370.000</td>
+                    <td>26/07/2025</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button class="btn btn-danger text-white">Xóa tất cả lựa chọn</button></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- phân trang -->
+    <div class="pagination-container p-3 d-flex justify-content-between">
+        <nav>
+            <ul class="pagination pagination-sm">
+                <li class="page-item active">
+                    <span class="page-link">1</span>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">3</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">4</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">5</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">></a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">>></a>
+                </li>
+            </ul>
+        </nav>
+        <div>
+            <span class="text-muted">Kết quả 1 trong 20 trang</span>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="footer-info bg-primary p-3 text-white">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>TRƯỜNG ĐẠI HỌC THỦY LỢI</h5>
+                    <p class="mb-1">Địa chỉ: 175 Tây Sơn, Đống Đa, Hà Nội</p>
+                    <p class="mb-1">Điện thoại: (024) 38522201 - Fax: (024) 35633351</p>
+                    <p class="mb-0">Email: info@tlu.edu.vn</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- add modal -->
+<div id="addOrder" class="modal fade" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form>
+          <div class="modal-header">
+            <h5 class="modal-title">Thêm giao dịch</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label class="form-label">Khách hàng</label>
+              <input type="text" class="form-control" id="customer">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Nhân viên</label>
+              <input type="text" class="form-control" id="employee">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Số tiền</label>
+              <input type="number" class="form-control" id="amount" >
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+            <button type="submit" class="btn btn-success">Thêm</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.querySelector("#addOrder form").addEventListener("submit", function (e) {
+      e.preventDefault(); // Ngăn submit mặc định
+  
+      const customer = document.getElementById("customer").value.trim();
+      const employee = document.getElementById("employee").value.trim();
+      const amount = document.getElementById("amount").value.trim();
+  
+      // validate
+      if (!customer) {
+        alert("Vui lòng nhập tên khách hàng!");
+        return;
+      }
+      if (customer.length > 30) {
+        alert("Tên khách hàng không được vượt quá 30 ký tự!");
+        return;
+      }
+  
+      if (!employee) {
+        alert("Vui lòng nhập tên nhân viên!");
+        return;
+      }
+      if (employee.length > 30) {
+        alert("Tên nhân viên không được vượt quá 30 ký tự!");
+        return;
+      }
+  
+      if (!amount) {
+        alert("Vui lòng nhập số tiền!");
+        return;
+      }
+  
+      if (isNaN(amount) || Number(amount) <= 0) {
+        alert("Số tiền phải là số hợp lệ lớn hơn 0!");
+        return;
+      }
+  
+      //hợp lệ
+      alert("Thêm giao dịch thành công!");
+    });
+  </script>
+  
+    
+</body>
+</html>
