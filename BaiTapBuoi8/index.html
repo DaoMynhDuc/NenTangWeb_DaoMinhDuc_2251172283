@@ -53,7 +53,7 @@
             <thead class="table-light">
                 <tr>
                     <th width="50">
-                        <input type="checkbox" class="form-check-input">
+                        <input id="selectAll" type="checkbox" class="form-check-input">
                     </th>
                     <th>Hành động</th>
                     <th>ID</th>
@@ -64,113 +64,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><input type="checkbox" class="form-check-input"></td>
-                    <td class="d-flex">
-                        <button class="btn btn-outline-primary btn-action" title="Xem chi tiết">
-                            <i class="fas fa-eye"></i>
-                        </button>
-                        <button class="btn btn-outline-warning btn-action" title="Chỉnh sửa">
-                            <i class="fas fa-edit"></i>
-                        </button>
-                        <button class="btn btn-outline-danger btn-action" title="Xóa">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </td>
-                    <td>1001</td>
-                    <td>Nguyễn Văn An</td>
-                    <td>Mai Thị Hoa</td>
-                    <td>320.000</td>
-                    <td>30/07/2025</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" class="form-check-input"></td>
-                    <td class="d-flex">
-                        <button class="btn btn-outline-primary btn-action" title="Xem chi tiết">
-                            <i class="fas fa-eye"></i>
-                        </button>
-                        <button class="btn btn-outline-warning btn-action" title="Chỉnh sửa">
-                            <i class="fas fa-edit"></i>
-                        </button>
-                        <button class="btn btn-outline-danger btn-action" title="Xóa">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </td>
-                    <td>1002</td>
-                    <td>Trần Thị Bình</td>
-                    <td>Nguyễn Văn Hùng</td>
-                    <td>150.000</td>
-                    <td>29/07/2025</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" class="form-check-input"></td>
-                    <td class="d-flex">
-                        <button class="btn btn-outline-primary btn-action" title="Xem chi tiết">
-                            <i class="fas fa-eye"></i>
-                        </button>
-                        <button class="btn btn-outline-warning btn-action" title="Chỉnh sửa">
-                            <i class="fas fa-edit"></i>
-                        </button>
-                        <button class="btn btn-outline-danger btn-action" title="Xóa">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </td>
-                    <td>1003</td>
-                    <td>Lê Hữu Cường</td>
-                    <td>Phạm Thị Hạnh</td>
-                    <td>480.000</td>
-                    <td>28/07/2025</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" class="form-check-input"></td>
-                    <td class="d-flex">
-                        <button class="btn btn-outline-primary btn-action" title="Xem chi tiết">
-                            <i class="fas fa-eye"></i>
-                        </button>
-                        <button class="btn btn-outline-warning btn-action" title="Chỉnh sửa">
-                            <i class="fas fa-edit"></i>
-                        </button>
-                        <button class="btn btn-outline-danger btn-action" title="Xóa">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </td>
-                    <td>1004</td>
-                    <td>Phạm Minh Đức</td>
-                    <td>Nguyễn Thị Thu</td>
-                    <td>210.000</td>
-                    <td>27/07/2025</td>
-                    
-                </tr>
-                <tr>
-                    <td><input type="checkbox" class="form-check-input"></td>
-                    <td class="d-flex">
-                        <button class="btn btn-outline-primary btn-action" title="Xem chi tiết">
-                            <i class="fas fa-eye"></i>
-                        </button>
-                        <button class="btn btn-outline-warning btn-action" title="Chỉnh sửa">
-                            <i class="fas fa-edit"></i>
-                        </button>
-                        <button class="btn btn-outline-danger btn-action" title="Xóa">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </td>
-                    <td>1005</td>
-                    <td>Vũ Thị Hương</td>
-                    <td>Trần Văn Quang</td>
-                    <td>370.000</td>
-                    <td>26/07/2025</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><button class="btn btn-danger text-white">Xóa tất cả lựa chọn</button></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
             </tbody>
         </table>
+    </div>
+    <div>
+        <button id="deleteAll" type="submit" class="btn btn-danger m-2">Xóa tất cả lựa chọn đã đánh dấu</button>
     </div>
     <!-- phân trang -->
     <div class="pagination-container p-3 d-flex justify-content-between">
@@ -249,9 +147,45 @@
   </div>
   
 
-
+<script src="data.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+    // do du lieu len bang
+    function renderTransactions() {
+    const tbody = document.querySelector("tbody");
+    tbody.innerHTML = ""; // Xóa bảng cũ
+
+    transactions.forEach(t => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td><input type="checkbox" class="form-check-input"></td>
+        <td class="d-flex">
+          <button class="btn btn-outline-primary btn-action" title="Xem chi tiết"><i class="fas fa-eye"></i></button>
+          <button class="btn btn-outline-warning btn-action" title="Chỉnh sửa"><i class="fas fa-edit"></i></button>
+          <button class="btn btn-outline-danger btn-action" title="Xóa"><i class="fas fa-trash"></i></button>
+        </td>
+        <td>${t.id}</td>
+        <td>${t.khachHang}</td>
+        <td>${t.nhanVien}</td>
+        <td>${Number(t.soTien).toLocaleString()}</td>
+        <td>${t.ngayMua}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+   renderTransactions();
+
+   // Gán sự kiện chọn tất cả
+document.getElementById("selectAll").addEventListener("change", function () {
+  const checkboxes = document.querySelectorAll("tbody input[type='checkbox']");
+  checkboxes.forEach(cb => cb.checked = this.checked);
+});
+
+
+
+
+
     document.querySelector("#addOrder form").addEventListener("submit", function (e) {
       e.preventDefault(); // Ngăn submit mặc định
   
